@@ -9,10 +9,8 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  /* flex-direction: column; */
-  background:linear-gradient(to right bottom, #168ce7, #3485d8, #427fc9, #4b79ba, #5173ab, #7274ae, #8d76ad, #a578a9, #d884a1, #f89a8f, #ffbc81, #f2e387);;
-}
-/* designing of container contains all things */
+  background-image: linear-gradient(to left top, #6983aa, #6290bc, #569fcc, #43addb, #1fbce7);
+}/* designing of container contains all things */
 .wrapper {
   width: 400px;
   background-color: rgba(255, 255, 255, 0.384);
@@ -51,15 +49,32 @@ header i {
   padding: 12px 10px;
   border-radius: 0px 7px;
   margin-bottom: 15px;
+  
 }
 /* error shown if the user types something incorrect */
+
+@keyframes shake {
+  0% { transform: translate(30px); }
+  20% { transform: translate(-30px); }
+  40% { transform: translate(15px); }
+  60% { transform: translate(-15px); }
+  80% { transform: translate(8px); }
+  100% { transform: translate(0px); }
+}
+@keyframes fadeIn {
+  0% {opacity: 0.6;}
+  100% {opacity: 1;}
+} 
 .warning-txt.error {
   display: block;
-  color: #ddc8ca;
-  background: #ff00197c;
+  color: #f7e7e8;
+  background: #f5071fdc;
   text-transform: capitalize;
   font-weight: 500;
+  animation: shake .4s ease-in-out 1 backwards;;
+  /* animation: shake .4s ease-in-out; */
 }
+
 /* label shown if the user types all things correct */
 
 .warning-txt.pending {
@@ -107,7 +122,7 @@ header i {
     color: rgba(136, 136, 136, 0.747);
 }
 .input-part input:is(:focus, :valid) {
-  border: 2px solid #2383d1;
+  border: 2.4px solid #2f43b6a2;
   transition: 0.3s;
 }
 .input-part button {
