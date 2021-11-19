@@ -33,11 +33,7 @@ inputValue.addEventListener("keyup", (e) => {
     // console.log('you clicked');
     //call this function
     giveCityResult(inputValue.value);
-    }
-  else {
-      warningText.innerText = 'City Can Not Be Empty ,Please Enter Something';
-      warningText.classList.add('error');
-    }
+  }
 });
 //definition of function
 const giveCityResult = (cityName) => {
@@ -54,7 +50,7 @@ const allDetails = () => {
 //weather info after typing the city name
 const giveWeatherInfo = (cityEntered) => {
   if (cityEntered.cod == 404 || cityEntered.cod == 400) {
-    warningText.innerText = `Error : ${cityEntered.message}`;
+    warningText.innerText = `Error : ${cityEntered.message} , Please Try Something Else ..`;
     warningText.classList.add("error");
     warningText.classList.replace("pending", "error");
   } else {
@@ -104,4 +100,6 @@ const giveWeatherInfo = (cityEntered) => {
 };
 backBtn.addEventListener("click", () => {
   wrapper.classList.remove("active");
+  body.style.background = 'linear-gradient(to left top, #6983aa, #6290bc, #569fcc, #43addb, #1fbce7)';
+  body.style.animation = 'fadeIn 2s ease-in-out';
 });
